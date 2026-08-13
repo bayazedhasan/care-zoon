@@ -1,0 +1,65 @@
+export const blogs = [
+  {
+    id: 'blog-1',
+    slug: 'the-future-of-wireless-hi-fi-audio-in-2026',
+    title: 'The Future of Wireless Hi-Fi Audio: Lossless Codecs & Spatial Acoustic Tech',
+    excerpt: 'Explore how new low-latency spatial audio architectures and beryllium drivers are reshaping the everyday audiophile listening experience.',
+    category: 'Tech & Audio',
+    readTime: '5 min read',
+    date: 'Aug 10, 2026',
+    author: {
+      name: 'Julian Vance',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+    },
+    image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1200&q=80',
+    content: `
+      ## The Next Evolution in Personal Audio
+      For decades, wireless listening required a compromise between portability and true fidelity. With the emergence of ultra-wideband Bluetooth protocols and next-generation acoustic chambers, that gap has vanished.
+
+      ### Why Driver Materials Matter
+      Standard plastic diaphragms flex unevenly under heavy transient loads, causing harmonic distortion. In contrast, ultra-rigid beryllium and planar magnetic diaphragms maintain structural rigidity across the audible frequency spectrum from 10Hz to 45kHz.
+
+      ### Spatial Acoustic Tuning
+      Modern digital signal processors can dynamically map sound to 3D virtual coordinates, simulating the spacious acoustic environment of an acoustically treated mastering room.
+    `
+  },
+  {
+    id: 'blog-2',
+    slug: 'minimalist-scandinavian-interior-design-guide',
+    title: 'Minimalist Scandinavian Living: How to Curate a Calming Sanctuary',
+    excerpt: 'Simple design principles to bring warmth, natural textures, and clutter-free tranquility into modern urban homes.',
+    category: 'Home & Living',
+    readTime: '6 min read',
+    date: 'Aug 04, 2026',
+    author: {
+      name: 'Astrid Lindholm',
+      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+    },
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80',
+    content: `
+      ## The Philosophy of 'Lagom' — Not Too Little, Not Too Much
+      Scandinavian design isn't about stark emptiness; it is about creating harmonious space filled only with objects that carry function and joy.
+
+      ### Emphasize Natural Light & Wood Tones
+      Using sustainably harvested European oak, textured linen, and warm 2700K ambient illumination helps soften clean architectural lines.
+    `
+  },
+  {
+    id: 'blog-3',
+    slug: 'clean-skincare-understanding-peptides-and-vit-c',
+    title: 'The Science of Clean Skincare: Deciphering Peptides & Lipid-Soluble Vitamin C',
+    excerpt: 'Demystifying active skincare ingredients: How antioxidant synergy protects the dermal barrier and promotes radiant collagen production.',
+    category: 'Wellness & Beauty',
+    readTime: '4 min read',
+    date: 'Jul 29, 2026',
+    author: {
+      name: 'Dr. Clara Gomez',
+      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+    },
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1200&q=80',
+    content: `
+      ## Understanding Lipid Solubility
+      Traditional L-Ascorbic Acid often oxidizes quickly and causes irritation on delicate skin. Lipid-soluble variants like THD Ascorbate penetrate lipid membranes 50x deeper without oxidizing.
+    `
+  }
+];
