@@ -1,0 +1,17 @@
+{
+  "id": "sports",
+  "name": "Sports & Outdoors",
+  "slug": "sports",
+  "icon": "Dumbbell",
+  "image": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+  "itemCount": 42,
+  "featured": true,
+  "description": "Performance gear, fitness equipment, hiking essentials, and activewear.",
+  "subcategories": [
+    "Fitness Equipment",
+    "Activewear",
+    "Outdoor & Camping",
+    "Running & Training",
+    "Hydration"
+  ]
+}

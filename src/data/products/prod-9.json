@@ -1,0 +1,46 @@
+{
+  "id": "prod-9",
+  "name": "ProGrade 4K Ultra-Wide Cinema Drone with Gimbal",
+  "slug": "prograde-4k-ultra-wide-cinema-drone",
+  "category": "electronics",
+  "categoryName": "Electronics & Gadgets",
+  "brand": "AuraSound",
+  "price": 499,
+  "originalPrice": 699,
+  "discountPercentage": 28,
+  "rating": 4.8,
+  "reviewCount": 160,
+  "stock": 8,
+  "isNew": true,
+  "isBestSeller": false,
+  "isFeatured": true,
+  "isFlashDeal": true,
+  "claimedPercentage": 80,
+  "image": "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=1000&q=80",
+  "images": [
+    "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "colors": [
+    {
+      "name": "Stealth Grey",
+      "hex": "#475569"
+    }
+  ],
+  "sizes": [
+    "Standard Fly Kit",
+    "Creator Combo Bundle"
+  ],
+  "sku": "AUR-DR-900",
+  "shortDescription": "4K/60fps HDR video, 3-axis mechanical gimbal, 38-minute flight time, and 12km range.",
+  "description": "Capture breathtaking aerial cinematography with cinematic smoothness and intelligent obstacle avoidance.",
+  "features": [
+    "4K/60fps 1/1.3\" CMOS sensor",
+    "3-Axis motorized gimbal",
+    "38-Minute flight time"
+  ],
+  "specifications": {
+    "Camera": "48 MP CMOS",
+    "Flight Time": "38 mins"
+  },
+  "reviews": []
+}

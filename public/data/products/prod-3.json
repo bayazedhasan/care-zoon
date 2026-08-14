@@ -1,0 +1,60 @@
+{
+  "id": "prod-3",
+  "name": "Nordic Minimalist Oak Wood Dining Chair",
+  "slug": "nordic-minimalist-oak-wood-dining-chair",
+  "category": "home",
+  "categoryName": "Home & Living",
+  "brand": "NordicSpace",
+  "price": 129,
+  "originalPrice": 169,
+  "discountPercentage": 23,
+  "rating": 4.7,
+  "reviewCount": 95,
+  "stock": 25,
+  "isNew": false,
+  "isBestSeller": true,
+  "isFeatured": true,
+  "isFlashDeal": false,
+  "claimedPercentage": 40,
+  "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=80",
+  "images": [
+    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=80",
+    "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=1000&q=80",
+    "https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "colors": [
+    {
+      "name": "Natural Oak",
+      "hex": "#d4a373"
+    },
+    {
+      "name": "Walnut Dark",
+      "hex": "#582f0e"
+    },
+    {
+      "name": "Matte Ash",
+      "hex": "#e9d8a6"
+    }
+  ],
+  "sizes": [
+    "Single",
+    "Set of 2",
+    "Set of 4"
+  ],
+  "sku": "NOR-CH-202",
+  "shortDescription": "Solid sustainably harvested European oak, curved ergonomic backrest, and durable matte polyurethane finish.",
+  "description": "Crafted from 100% FSC-certified solid oak, this minimalist dining chair blends timeless Scandinavian craft with ergonomic modern engineering.",
+  "features": [
+    "100% Solid European White Oak construction",
+    "Steam-bent curved backrest for lumbar ergonomics",
+    "Eco-friendly non-toxic matte sealing",
+    "Reinforced mortise and tenon joinery"
+  ],
+  "specifications": {
+    "Material": "Solid European Oak",
+    "Dimensions": "48cm W x 52cm D x 79cm H",
+    "Seat Height": "45cm",
+    "Max Weight Capacity": "150 kg / 330 lbs"
+  },
+  "reviews": []
+}

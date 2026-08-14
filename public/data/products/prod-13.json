@@ -1,0 +1,50 @@
+{
+  "id": "prod-13",
+  "name": "Minimalist Matte Ceramic Table Lamp",
+  "slug": "minimalist-matte-ceramic-table-lamp",
+  "category": "home",
+  "categoryName": "Home & Living",
+  "brand": "NordicSpace",
+  "price": 89,
+  "originalPrice": 120,
+  "discountPercentage": 26,
+  "rating": 4.6,
+  "reviewCount": 64,
+  "stock": 20,
+  "isNew": true,
+  "isBestSeller": false,
+  "isFeatured": true,
+  "isFlashDeal": true,
+  "claimedPercentage": 55,
+  "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=1000&q=80",
+  "images": [
+    "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "colors": [
+    {
+      "name": "Sand Beige",
+      "hex": "#d6c7b2"
+    },
+    {
+      "name": "Slate Gray",
+      "hex": "#64748b"
+    }
+  ],
+  "sizes": [
+    "Medium 42cm",
+    "Large 55cm"
+  ],
+  "sku": "NOR-LP-101",
+  "shortDescription": "Sculptural ceramic base with textured linen drum shade and 3-step touch dimming.",
+  "description": "Cast a warm, ambient glow across your bedside or study with this sculptural artisan lamp.",
+  "features": [
+    "Touch sensor with 3 dimming levels",
+    "Natural woven linen shade",
+    "Energy-efficient LED bulb included"
+  ],
+  "specifications": {
+    "Dimensions": "42cm H x 26cm W",
+    "Bulb": "E27 LED warm 2700K"
+  },
+  "reviews": []
+}

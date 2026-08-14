@@ -1,0 +1,45 @@
+{
+  "id": "prod-16",
+  "name": "Aromatherapy Ultrasonic Pure Brass Essential Oil Diffuser",
+  "slug": "aromatherapy-ultrasonic-brass-diffuser",
+  "category": "beauty",
+  "categoryName": "Beauty & Wellness",
+  "brand": "VerdeBotanics",
+  "price": 64,
+  "originalPrice": 85,
+  "discountPercentage": 25,
+  "rating": 4.9,
+  "reviewCount": 172,
+  "stock": 28,
+  "isNew": false,
+  "isBestSeller": true,
+  "isFeatured": true,
+  "isFlashDeal": true,
+  "claimedPercentage": 68,
+  "image": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1000&q=80",
+  "images": [
+    "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "colors": [
+    {
+      "name": "Matte Brushed Brass",
+      "hex": "#ca8a04"
+    }
+  ],
+  "sizes": [
+    "200ml Water Tank"
+  ],
+  "sku": "VRD-DIF-800",
+  "shortDescription": "Whisper-quiet ultrasonic misting, solid spun brass cover, ambient warm LED rim, and auto-shutoff timer.",
+  "description": "Transform your space into a calming sanctuary with gentle cool mist diffusion and soothing ambient lighting.",
+  "features": [
+    "Solid brushed brass and BPA-free reservoir",
+    "Covers up to 500 sq ft",
+    "4 Timer settings with safety auto-off"
+  ],
+  "specifications": {
+    "Capacity": "200 ml",
+    "Runtime": "Up to 8 hours"
+  },
+  "reviews": []
+}

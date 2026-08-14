@@ -1,0 +1,17 @@
+{
+  "id": "beauty",
+  "name": "Beauty & Wellness",
+  "slug": "beauty",
+  "icon": "Sparkles",
+  "image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=80",
+  "itemCount": 29,
+  "featured": true,
+  "description": "Organic skincare, aromatherapy, hair health, and everyday self-care essentials.",
+  "subcategories": [
+    "Skincare",
+    "Fragrances",
+    "Hair Care",
+    "Body & Bath",
+    "Wellness & Spa"
+  ]
+}

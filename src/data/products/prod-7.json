@@ -1,0 +1,49 @@
+{
+  "id": "prod-7",
+  "name": "Artisan Handcrafted Ceramic Coffee Pour-Over Set",
+  "slug": "artisan-handcrafted-ceramic-coffee-pour-over-set",
+  "category": "home",
+  "categoryName": "Home & Living",
+  "brand": "NordicSpace",
+  "price": 58,
+  "originalPrice": 75,
+  "discountPercentage": 23,
+  "rating": 4.8,
+  "reviewCount": 78,
+  "stock": 15,
+  "isNew": true,
+  "isBestSeller": false,
+  "isFeatured": true,
+  "isFlashDeal": false,
+  "claimedPercentage": 30,
+  "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=80",
+  "images": [
+    "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "colors": [
+    {
+      "name": "Speckled Stone",
+      "hex": "#e7e5e4"
+    },
+    {
+      "name": "Terracotta Matte",
+      "hex": "#9a3412"
+    }
+  ],
+  "sizes": [
+    "600ml Server + Dripper"
+  ],
+  "sku": "ART-CF-303",
+  "shortDescription": "Stoneware dripper with 600ml heat-resistant borosilicate glass carafe and walnut wood collar.",
+  "description": "Elevate your morning coffee ritual with this artisan handcrafted ceramic pour-over set.",
+  "features": [
+    "High-fired durable stoneware dripper",
+    "600ml borosilicate glass carafe",
+    "Solid walnut collar"
+  ],
+  "specifications": {
+    "Capacity": "600 ml",
+    "Material": "Ceramic, Glass, Walnut"
+  },
+  "reviews": []
+}

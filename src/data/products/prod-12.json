@@ -1,0 +1,45 @@
+{
+  "id": "prod-12",
+  "name": "Smart Auto-Cleaning Cat Litter Box with App",
+  "slug": "smart-auto-cleaning-cat-litter-box",
+  "category": "pets",
+  "categoryName": "Pet Care & Supplies",
+  "brand": "PawHaven",
+  "price": 349,
+  "originalPrice": 450,
+  "discountPercentage": 22,
+  "rating": 4.7,
+  "reviewCount": 145,
+  "stock": 14,
+  "isNew": true,
+  "isBestSeller": false,
+  "isFeatured": true,
+  "isFlashDeal": false,
+  "claimedPercentage": 42,
+  "image": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=80",
+  "images": [
+    "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "colors": [
+    {
+      "name": "Frost White",
+      "hex": "#f8fafc"
+    }
+  ],
+  "sizes": [
+    "Standard 65L Chamber"
+  ],
+  "sku": "PAW-LT-909",
+  "shortDescription": "Automatic waste sifting, triple odor ozone neutralization, and cat weight tracking.",
+  "description": "Quietly cycles waste into a sealed carbon-filtered drawer after your cat leaves.",
+  "features": [
+    "Whisper-quiet automated cleaning (<35dB)",
+    "Multi-cat weight tracking",
+    "Triple-sealed waste bin"
+  ],
+  "specifications": {
+    "Capacity": "65L Drum",
+    "Connectivity": "Wi-Fi + App"
+  },
+  "reviews": []
+}

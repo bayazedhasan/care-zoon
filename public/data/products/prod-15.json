@@ -1,0 +1,50 @@
+{
+  "id": "prod-15",
+  "name": "Ultra-Lightweight Ergonomic Mechanical Keyboard",
+  "slug": "ultra-lightweight-ergonomic-mechanical-keyboard",
+  "category": "electronics",
+  "categoryName": "Electronics & Gadgets",
+  "brand": "LumixTech",
+  "price": 119,
+  "originalPrice": 159,
+  "discountPercentage": 25,
+  "rating": 4.8,
+  "reviewCount": 188,
+  "stock": 16,
+  "isNew": true,
+  "isBestSeller": false,
+  "isFeatured": true,
+  "isFlashDeal": false,
+  "claimedPercentage": 48,
+  "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1000&q=80",
+  "images": [
+    "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "colors": [
+    {
+      "name": "Retro White / Grey",
+      "hex": "#e2e8f0"
+    },
+    {
+      "name": "Cyberpunk Black",
+      "hex": "#0f172a"
+    }
+  ],
+  "sizes": [
+    "75% Compact (84 Keys)",
+    "Full Size (104 Keys)"
+  ],
+  "sku": "LUM-KB-750",
+  "shortDescription": "Hot-swappable tactile switches, gasket mount sound damping, RGB per-key backlighting, and Bluetooth 5.3.",
+  "description": "A typing experience second to none. Equipped with custom pre-lubed mechanical switches and multi-layer acoustic foam.",
+  "features": [
+    "Hot-swappable 5-pin PCB",
+    "Multi-layer Poron gasket mounting",
+    "Tri-mode connectivity (2.4G/BT/Type-C)"
+  ],
+  "specifications": {
+    "Battery": "4000 mAh (200 hrs)",
+    "Switches": "Gateron G-Pro Yellow"
+  },
+  "reviews": []
+}

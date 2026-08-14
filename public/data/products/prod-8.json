@@ -1,0 +1,52 @@
+{
+  "id": "prod-8",
+  "name": "Signature Tailored Wool Blend Overcoat",
+  "slug": "signature-tailored-wool-blend-overcoat",
+  "category": "fashion",
+  "categoryName": "Fashion & Apparel",
+  "brand": "VogueModa",
+  "price": 245,
+  "originalPrice": 350,
+  "discountPercentage": 30,
+  "rating": 4.9,
+  "reviewCount": 135,
+  "stock": 9,
+  "isNew": true,
+  "isBestSeller": true,
+  "isFeatured": true,
+  "isFlashDeal": false,
+  "claimedPercentage": 82,
+  "image": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+  "images": [
+    "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "colors": [
+    {
+      "name": "Camel Tan",
+      "hex": "#c28544"
+    },
+    {
+      "name": "Charcoal Houndstooth",
+      "hex": "#374151"
+    }
+  ],
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "sku": "VOG-CT-880",
+  "shortDescription": "70% Recycled Italian wool blend, horn buttons, structured notch lapels, and silky lining.",
+  "description": "A timeless silhouette constructed for modern sophistication and structured drape.",
+  "features": [
+    "70% Recycled Italian Wool",
+    "Breathable Cupro lining",
+    "Genuine corozo nut buttons"
+  ],
+  "specifications": {
+    "Fit": "Tailored",
+    "Care": "Dry clean only"
+  },
+  "reviews": []
+}

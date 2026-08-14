@@ -1,0 +1,48 @@
+{
+  "id": "prod-4",
+  "name": "Botanical Radiance Vitamin C + Peptide Serum",
+  "slug": "botanical-radiance-vitamin-c-peptide-serum",
+  "category": "beauty",
+  "categoryName": "Beauty & Wellness",
+  "brand": "VerdeBotanics",
+  "price": 46,
+  "originalPrice": 65,
+  "discountPercentage": 29,
+  "rating": 4.9,
+  "reviewCount": 412,
+  "stock": 50,
+  "isNew": true,
+  "isBestSeller": true,
+  "isFeatured": true,
+  "isFlashDeal": true,
+  "claimedPercentage": 88,
+  "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1000&q=80",
+  "images": [
+    "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1000&q=80",
+    "https://images.unsplash.com/photo-1608248597359-59846b4122d6?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "colors": [
+    {
+      "name": "Standard Dropper Bottle",
+      "hex": "#d97706"
+    }
+  ],
+  "sizes": [
+    "30ml / 1.0 fl oz",
+    "50ml / 1.7 fl oz"
+  ],
+  "sku": "VRD-SER-101",
+  "shortDescription": "15% Stabilized THD Ascorbate, Ferulic acid, Tri-peptide complex, and Hyaluronic acid for luminous glow.",
+  "description": "Transform dull, uneven skin with our clinical-grade botanical radiance elixir. Powered by 15% ultra-stable lipid-soluble Vitamin C (THD Ascorbate).",
+  "features": [
+    "15% Stabilized lipid-soluble Vitamin C (THD Ascorbate)",
+    "Bio-fermented Hyaluronic Acid for deep multi-layer hydration",
+    "100% Vegan, Cruelty-Free, and Paraben-Free"
+  ],
+  "specifications": {
+    "Skin Type": "All skin types (including sensitive)",
+    "Volume": "30ml / 1.0 fl oz",
+    "Origin": "Made in France"
+  },
+  "reviews": []
+}

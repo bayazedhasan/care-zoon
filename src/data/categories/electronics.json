@@ -1,0 +1,17 @@
+{
+  "id": "electronics",
+  "name": "Electronics & Gadgets",
+  "slug": "electronics",
+  "icon": "Smartphone",
+  "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+  "itemCount": 48,
+  "featured": true,
+  "description": "Next-gen audio, smart home gear, wearable tech, and premium peripherals.",
+  "subcategories": [
+    "Audio & Headphones",
+    "Smart Watches",
+    "Laptops & Tablets",
+    "Cameras & Drones",
+    "Gaming Accessories"
+  ]
+}

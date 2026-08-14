@@ -1,0 +1,56 @@
+{
+  "id": "prod-6",
+  "name": "Orthopedic Memory Foam Cloud Pet Bed",
+  "slug": "orthopedic-memory-foam-cloud-pet-bed",
+  "category": "pets",
+  "categoryName": "Pet Care & Supplies",
+  "brand": "PawHaven",
+  "price": 74.99,
+  "originalPrice": 99.99,
+  "discountPercentage": 25,
+  "rating": 4.9,
+  "reviewCount": 310,
+  "stock": 22,
+  "isNew": false,
+  "isBestSeller": true,
+  "isFeatured": true,
+  "isFlashDeal": true,
+  "claimedPercentage": 70,
+  "image": "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=1000&q=80",
+  "images": [
+    "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=1000&q=80",
+    "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "colors": [
+    {
+      "name": "Slate Heather Grey",
+      "hex": "#64748b"
+    },
+    {
+      "name": "Camel Tan",
+      "hex": "#b45309"
+    },
+    {
+      "name": "Nordic Charcoal",
+      "hex": "#334155"
+    }
+  ],
+  "sizes": [
+    "Small (Under 20 lbs)",
+    "Medium (20-50 lbs)",
+    "Large (50-90 lbs)"
+  ],
+  "sku": "PAW-BD-501",
+  "shortDescription": "Human-grade therapeutic memory foam base, 360° cushioned bolster rim, and machine-washable waterproof cover.",
+  "description": "Give your furry family member the ultimate restorative sleep with dual-density memory foam.",
+  "features": [
+    "4-inch Medical-grade dual-density orthopedic memory foam",
+    "100% Machine-washable removable zippered micro-velvet cover",
+    "Internal waterproof lining"
+  ],
+  "specifications": {
+    "Cover Material": "Heavy-duty Micro-velvet",
+    "Core": "CertiPUR-US Orthopedic Foam"
+  },
+  "reviews": []
+}

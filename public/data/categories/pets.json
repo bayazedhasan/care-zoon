@@ -1,0 +1,17 @@
+{
+  "id": "pets",
+  "name": "Pet Care & Supplies",
+  "slug": "pets",
+  "icon": "HeartHandshake",
+  "image": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80",
+  "itemCount": 24,
+  "featured": true,
+  "description": "Nutritious organic pet treats, ergonomic bedding, collars, and toys.",
+  "subcategories": [
+    "Dog Essentials",
+    "Cat Care",
+    "Grooming & Health",
+    "Beds & Furniture",
+    "Toys & Training"
+  ]
+}

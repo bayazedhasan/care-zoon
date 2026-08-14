@@ -1,0 +1,45 @@
+{
+  "id": "prod-10",
+  "name": "BioRevive Hydrating Peptide Night Cream",
+  "slug": "biorevive-hydrating-peptide-night-cream",
+  "category": "beauty",
+  "categoryName": "Beauty & Wellness",
+  "brand": "VerdeBotanics",
+  "price": 52,
+  "originalPrice": 68,
+  "discountPercentage": 24,
+  "rating": 4.9,
+  "reviewCount": 280,
+  "stock": 35,
+  "isNew": false,
+  "isBestSeller": true,
+  "isFeatured": false,
+  "isFlashDeal": false,
+  "claimedPercentage": 45,
+  "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1000&q=80",
+  "images": [
+    "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "colors": [
+    {
+      "name": "50ml Glass Jar",
+      "hex": "#3b82f6"
+    }
+  ],
+  "sizes": [
+    "50ml / 1.7 oz"
+  ],
+  "sku": "VRD-NC-202",
+  "shortDescription": "Ceramide complex, multi-molecular hyaluronic acid, bakuchiol, and niacinamide.",
+  "description": "Wake up to plump, rested, and revitalized skin with deep nighttime cellular hydration.",
+  "features": [
+    "5 Bio-identical Ceramides",
+    "1% Bakuchiol",
+    "Calming botanical extracts"
+  ],
+  "specifications": {
+    "Volume": "50ml",
+    "Application": "Nightly"
+  },
+  "reviews": []
+}

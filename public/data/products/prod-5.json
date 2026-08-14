@@ -1,0 +1,59 @@
+{
+  "id": "prod-5",
+  "name": "Velocity Aero Carbon Road Running Shoes",
+  "slug": "velocity-aero-carbon-road-running-shoes",
+  "category": "sports",
+  "categoryName": "Sports & Outdoors",
+  "brand": "AeroStride",
+  "price": 159.99,
+  "originalPrice": 219.99,
+  "discountPercentage": 27,
+  "rating": 4.8,
+  "reviewCount": 220,
+  "stock": 14,
+  "isNew": true,
+  "isBestSeller": true,
+  "isFeatured": true,
+  "isFlashDeal": false,
+  "claimedPercentage": 50,
+  "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80",
+  "images": [
+    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80",
+    "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "colors": [
+    {
+      "name": "Crimson Surge",
+      "hex": "#dc2626"
+    },
+    {
+      "name": "Volt Neon",
+      "hex": "#84cc16"
+    },
+    {
+      "name": "Phantom Carbon",
+      "hex": "#0f172a"
+    }
+  ],
+  "sizes": [
+    "US 8",
+    "US 9",
+    "US 10",
+    "US 11",
+    "US 12"
+  ],
+  "sku": "AER-RN-770",
+  "shortDescription": "Curved carbon propulsion plate, nitrogen-infused superfoam cushioning, and breathable engineered mesh.",
+  "description": "Engineered for PR-breaking speed, the Velocity Aero features a full-length carbon composite plate sandwiched between dual layers of responsive foam.",
+  "features": [
+    "Full-length 3D curved carbon fiber propulsion plate",
+    "Supercritical nitrogen-infused PEBA midsole foam",
+    "High-abrasion Continental rubber outsole grip"
+  ],
+  "specifications": {
+    "Weight": "198g",
+    "Heel-to-Toe Drop": "8 mm",
+    "Arch Support": "Neutral"
+  },
+  "reviews": []
+}

@@ -1,0 +1,45 @@
+{
+  "id": "prod-11",
+  "name": "FlexGrip Pro Adjustable Dumbbell Set (5-50 lbs)",
+  "slug": "flexgrip-pro-adjustable-dumbbell-set",
+  "category": "sports",
+  "categoryName": "Sports & Outdoors",
+  "brand": "AeroStride",
+  "price": 289,
+  "originalPrice": 380,
+  "discountPercentage": 24,
+  "rating": 4.8,
+  "reviewCount": 194,
+  "stock": 10,
+  "isNew": false,
+  "isBestSeller": true,
+  "isFeatured": true,
+  "isFlashDeal": false,
+  "claimedPercentage": 60,
+  "image": "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=1000&q=80",
+  "images": [
+    "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "colors": [
+    {
+      "name": "Matte Black",
+      "hex": "#1e293b"
+    }
+  ],
+  "sizes": [
+    "Pair (5-50 lbs each)"
+  ],
+  "sku": "AER-DB-550",
+  "shortDescription": "Rapid dial weight selection from 5 to 50 lbs, laser-etched knurled steel grip handle.",
+  "description": "Replaces 10 pairs of individual dumbbells in a compact space-saving design with rapid dial selection.",
+  "features": [
+    "Adjusts from 5 to 50 lbs per dumbbell",
+    "Heavy-duty steel plates",
+    "Diamond knurled handle"
+  ],
+  "specifications": {
+    "Weight Range": "5 to 50 lbs",
+    "Material": "Machined Steel"
+  },
+  "reviews": []
+}

@@ -1,0 +1,61 @@
+{
+  "id": "prod-2",
+  "name": "Lumix Horizon Smart Fitness GPS Watch",
+  "slug": "lumix-horizon-smart-fitness-gps-watch",
+  "category": "electronics",
+  "categoryName": "Electronics & Gadgets",
+  "brand": "LumixTech",
+  "price": 149.5,
+  "originalPrice": 199.99,
+  "discountPercentage": 25,
+  "rating": 4.8,
+  "reviewCount": 189,
+  "stock": 12,
+  "isNew": false,
+  "isBestSeller": true,
+  "isFeatured": true,
+  "isFlashDeal": true,
+  "claimedPercentage": 64,
+  "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=80",
+  "images": [
+    "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=80",
+    "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=1000&q=80",
+    "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "colors": [
+    {
+      "name": "Onyx Black",
+      "hex": "#1e293b"
+    },
+    {
+      "name": "Starlight Silver",
+      "hex": "#e2e8f0"
+    },
+    {
+      "name": "Ocean Navy",
+      "hex": "#1e3a8a"
+    }
+  ],
+  "sizes": [
+    "40mm",
+    "44mm"
+  ],
+  "sku": "LUM-SW-404",
+  "shortDescription": "1.43\" AMOLED display, dual-band GPS, SpO2 & ECG sensor, 14-day battery, and 50m water resistance.",
+  "description": "Elevate your fitness journey with the Lumix Horizon. Track over 120 sports modes with surgical precision thanks to the multi-satellite dual-band GNSS tracking system.",
+  "features": [
+    "1.43\" Ultra-Bright AMOLED display with sapphire glass protection",
+    "Dual-Band Multi-Satellite GPS (GPS, GLONASS, Galileo, BeiDou)",
+    "14-Day battery life in smart mode / 30 hours continuous GPS",
+    "5ATM Water Resistance (swimming & water sports ready)",
+    "Voice Assistant & Bluetooth Call integration"
+  ],
+  "specifications": {
+    "Display": "1.43\" AMOLED (466x466 px)",
+    "Water Rating": "5 ATM / 50 meters",
+    "Battery": "450 mAh (14 Days standard)",
+    "Sensors": "Optical HR, SpO2, Barometer, Gyroscope",
+    "Compatibility": "iOS 12+ & Android 8.0+"
+  },
+  "reviews": []
+}

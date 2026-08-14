@@ -25,18 +25,32 @@ function ProductCatalogContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const initialCategory = searchParams.get('category') || 'all';
-  const initialBrand = searchParams.get('brand') || '';
-  const initialFilter = searchParams.get('filter') || '';
+  const urlCategory = searchParams.get('category') || 'all';
+  const urlBrand = searchParams.get('brand') || '';
+  const urlSub = searchParams.get('sub') || '';
+  const urlFilter = searchParams.get('filter') || '';
 
   // Filter States
-  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
-  const [selectedBrands, setSelectedBrands] = useState(initialBrand ? [initialBrand] : []);
+  const [selectedCategory, setSelectedCategory] = useState(urlCategory);
+  const [selectedSubcategory, setSelectedSubcategory] = useState(urlSub);
+  const [selectedBrands, setSelectedBrands] = useState(urlBrand ? [urlBrand] : []);
   const [priceRange, setPriceRange] = useState([0, 600]);
   const [minRating, setMinRating] = useState(0);
   const [inStockOnly, setInStockOnly] = useState(false);
-  const [dealsOnly, setDealsOnly] = useState(initialFilter === 'deals');
+  const [dealsOnly, setDealsOnly] = useState(urlFilter === 'deals');
   const [selectedColor, setSelectedColor] = useState('');
+
+  // Sync state when URL searchParams change
+  React.useEffect(() => {
+    if (urlCategory) setSelectedCategory(urlCategory);
+    if (urlSub !== undefined) setSelectedSubcategory(urlSub);
+    if (urlBrand) {
+      setSelectedBrands([urlBrand]);
+    } else if (!searchParams.has('brand')) {
+      setSelectedBrands([]);
+    }
+    if (urlFilter === 'deals') setDealsOnly(true);
+  }, [urlCategory, urlSub, urlBrand, urlFilter, searchParams]);
 
   // View and Sorting States
   const [sortBy, setSortBy] = useState('featured');
@@ -49,12 +63,26 @@ function ProductCatalogContent() {
   const filteredProducts = useMemo(() => {
     return products.filter((p) => {
       // Category
-      if (selectedCategory !== 'all' && p.category !== selectedCategory) {
+      if (selectedCategory !== 'all' && p.category.toLowerCase() !== selectedCategory.toLowerCase()) {
         return false;
       }
+      // Subcategory
+      if (selectedSubcategory) {
+        const subLower = selectedSubcategory.toLowerCase();
+        const pSub = (p.subcategory || '').toLowerCase();
+        const pName = (p.name || '').toLowerCase();
+        const pDesc = (p.description || '').toLowerCase();
+        const pShort = (p.shortDescription || '').toLowerCase();
+        const pFeatures = Array.isArray(p.features) ? p.features.join(' ').toLowerCase() : '';
+        const match = pSub.includes(subLower) || pName.includes(subLower) || pDesc.includes(subLower) || pShort.includes(subLower) || pFeatures.includes(subLower);
+        if (!match) return false;
+      }
       // Brand
-      if (selectedBrands.length > 0 && !selectedBrands.includes(p.brand)) {
-        return false;
+      if (selectedBrands.length > 0) {
+        const brandMatch = selectedBrands.some(
+          (b) => b.toLowerCase() === (p.brand || '').toLowerCase() || b.toLowerCase() === (p.brandId || '').toLowerCase()
+        );
+        if (!brandMatch) return false;
       }
       // Price
       if (p.price < priceRange[0] || p.price > priceRange[1]) {
@@ -78,7 +106,7 @@ function ProductCatalogContent() {
       }
       return true;
     });
-  }, [selectedCategory, selectedBrands, priceRange, minRating, inStockOnly, dealsOnly, selectedColor]);
+  }, [selectedCategory, selectedSubcategory, selectedBrands, priceRange, minRating, inStockOnly, dealsOnly, selectedColor]);
 
   // Sort Logic
   const sortedProducts = useMemo(() => {

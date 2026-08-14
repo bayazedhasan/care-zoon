@@ -1,0 +1,57 @@
+{
+  "id": "prod-14",
+  "name": "Essential Oversized Heavyweight Cotton Hoodie",
+  "slug": "essential-oversized-heavyweight-cotton-hoodie",
+  "category": "fashion",
+  "categoryName": "Fashion & Apparel",
+  "brand": "VogueModa",
+  "price": 68,
+  "originalPrice": 90,
+  "discountPercentage": 24,
+  "rating": 4.9,
+  "reviewCount": 310,
+  "stock": 45,
+  "isNew": false,
+  "isBestSeller": true,
+  "isFeatured": true,
+  "isFlashDeal": false,
+  "claimedPercentage": 85,
+  "image": "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
+  "images": [
+    "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "colors": [
+    {
+      "name": "Washed Charcoal",
+      "hex": "#334155"
+    },
+    {
+      "name": "Vintage Olive",
+      "hex": "#4d5c41"
+    },
+    {
+      "name": "Oatmeal Heather",
+      "hex": "#e2d9cc"
+    }
+  ],
+  "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "sku": "VOG-HD-330",
+  "shortDescription": "450 GSM French terry organic cotton, double-layered hood, dropped shoulders, and ribbed cuffs.",
+  "description": "The definitive luxury hoodie. Cut from ultra-dense 450 GSM organic French terry cotton for a structured boxy drape.",
+  "features": [
+    "450 GSM 100% Organic French Terry",
+    "Double-lined seamless hood",
+    "Pre-shrunk fabric"
+  ],
+  "specifications": {
+    "Fit": "Relaxed Oversized",
+    "Care": "Machine wash cold"
+  },
+  "reviews": []
+}

@@ -1,0 +1,17 @@
+{
+  "id": "fashion",
+  "name": "Fashion & Apparel",
+  "slug": "fashion",
+  "icon": "Shirt",
+  "image": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80",
+  "itemCount": 65,
+  "featured": true,
+  "description": "Contemporary streetwear, timeless classics, outerwear, and footwear.",
+  "subcategories": [
+    "Men Fashion",
+    "Women Fashion",
+    "Footwear",
+    "Outerwear & Jackets",
+    "Bags & Accessories"
+  ]
+}

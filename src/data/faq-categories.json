@@ -1,0 +1,22 @@
+[
+  {
+    "id": "orders",
+    "name": "Orders & Tracking"
+  },
+  {
+    "id": "shipping",
+    "name": "Shipping & Delivery"
+  },
+  {
+    "id": "returns",
+    "name": "Returns & Refunds"
+  },
+  {
+    "id": "payments",
+    "name": "Payments & Pricing"
+  },
+  {
+    "id": "account",
+    "name": "Account & Security"
+  }
+]

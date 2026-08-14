@@ -40,8 +40,8 @@ export const categories = [
     image: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=80',
     itemCount: 29,
     featured: true,
-    description: 'Organic skincare, aromatherapy, hair health, and everyday self-care essentials.',
-    subcategories: ['Skincare', 'Fragrances', 'Hair Care', 'Body & Bath', 'Wellness & Spa'],
+    description: 'Organic skincare, aromatherapy, hair health, makeup, fragrances, and everyday self-care essentials.',
+    subcategories: ['Skin', 'Hair', 'Personal Care', 'Mom and baby', 'Fragrance', 'Makeup', 'Jewellery', 'Combo', 'Men'],
   },
   {
     id: 'sports',

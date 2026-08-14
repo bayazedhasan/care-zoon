@@ -6,4 +6,15 @@ export const brands = [
   { id: 'aerostride', name: 'AeroStride', logo: '⚡ AeroStride', category: 'Athletics & Gear', productCount: 16 },
   { id: 'pawhaven', name: 'PawHaven', logo: '🐾 PawHaven', category: 'Pet Care & Living', productCount: 12 },
   { id: 'voguemoda', name: 'VogueModa', logo: '✨ VogueModa', category: 'Apparel & Style', productCount: 28 },
+  { id: 'cerave', name: 'CeraVe', logo: '🧴 CeraVe', category: 'Dermatological Skincare', productCount: 24 },
+  { id: 'theordinary', name: 'The Ordinary', logo: '🧪 The Ordinary', category: 'Active Skincare', productCount: 31 },
+  { id: 'dior', name: 'Dior', logo: '💄 Dior Beauty', category: 'Luxury Makeup & Fragrance', productCount: 15 },
+  { id: 'chanel', name: 'Chanel', logo: '✨ Chanel', category: 'Fragrance & High Fashion', productCount: 12 },
+  { id: 'glossier', name: 'Glossier', logo: '🌸 Glossier', category: 'Minimalist Makeup', productCount: 20 },
+  { id: 'fenty', name: 'Fenty Beauty', logo: '💎 Fenty Beauty', category: 'Inclusive Cosmetics', productCount: 17 },
+  { id: 'loreal', name: "L'Oréal Paris", logo: '🌟 L’Oréal', category: 'Hair & Skincare', productCount: 35 },
+  { id: 'apple', name: 'Apple', logo: '🍎 Apple', category: 'Electronics & Audio', productCount: 16 },
+  { id: 'sony', name: 'Sony', logo: '🔊 Sony Audio', category: 'Audio & Cameras', productCount: 21 },
+  { id: 'nike', name: 'Nike', logo: '👟 Nike Athletics', category: 'Sportswear & Footwear', productCount: 38 },
 ];
+
