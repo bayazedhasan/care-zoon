@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import './globals.css';
 import { ToastProvider } from '@/context/ToastContext';
 import { ThemeProvider } from '@/context/ThemeContext';
@@ -8,16 +8,8 @@ import { CartProvider } from '@/context/CartContext';
 import { WishlistProvider } from '@/context/WishlistContext';
 import { AuthProvider } from '@/context/AuthContext';
 import { ModalProvider } from '@/context/ModalContext';
-import Navbar from '@/components/layout/Navbar';
-import MobileNav from '@/components/layout/MobileNav';
-import Footer from '@/components/layout/Footer';
-import QuickViewModal from '@/components/common/QuickViewModal';
-import CartDrawer from '@/components/common/CartDrawer';
-import SearchCommandModal from '@/components/common/SearchCommandModal';
 
 export default function RootLayout({ children }) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -40,27 +32,7 @@ export default function RootLayout({ children }) {
             <WishlistProvider>
               <AuthProvider>
                 <ModalProvider>
-                  <ThemeProvider>
-                    {/* Header */}
-                    <Navbar onMobileMenuOpen={() => setMobileMenuOpen(true)} />
-
-                    {/* Mobile Navigation Drawer & Bottom Bar */}
-                    <MobileNav
-                      isOpen={mobileMenuOpen}
-                      onClose={() => setMobileMenuOpen(false)}
-                    />
-
-                    {/* Main Content View */}
-                    <main className="flex-1 w-full">{children}</main>
-
-                    {/* Footer */}
-                    <Footer />
-
-                    {/* Global Drawers & Modals */}
-                    <QuickViewModal />
-                    <CartDrawer />
-                    <SearchCommandModal />
-                  </ThemeProvider>
+                  <ThemeProvider>{children}</ThemeProvider>
                 </ModalProvider>
               </AuthProvider>
             </WishlistProvider>
