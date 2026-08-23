@@ -1,10 +1,8 @@
 import { registerSchema } from '@/lib/validators';
-import { hashPassword } from '@/lib/auth';
 import {
   fail,
   getPagination,
   logActivity,
-  notFound,
   ok,
   parseBody,
   requirePermission,
@@ -13,6 +11,7 @@ import {
   withPagination,
 } from '@/lib/api';
 import { prisma } from '@/lib/prisma';
+import { supabaseAdmin } from '@/lib/supabaseAdmin';
 
 export const GET = withError(async (request) => {
   await requirePermission(request, 'users');
@@ -41,19 +40,37 @@ export const POST = withError(async (request) => {
   const user = await requireRole(request, ['ADMIN']);
   const data = await parseBody(request, registerSchema);
 
-  const existing = await prisma.user.findUnique({ where: { email: data.email.toLowerCase() } });
+  const email = data.email.toLowerCase();
+  const existing = await prisma.user.findUnique({ where: { email } });
   if (existing) return fail('A user with this email already exists', 409);
 
-  const created = await prisma.user.create({
-    data: {
-      name: data.name,
-      email: data.email.toLowerCase(),
-      password: await hashPassword(data.password),
-      role: 'STAFF',
-    },
-    select: { id: true, name: true, email: true, role: true, active: true, createdAt: true },
+  // Credentials live in Supabase Auth; we only mirror the profile into Prisma.
+  const { data: authData, error: authError } = await supabaseAdmin.auth.admin.createUser({
+    email,
+    password: data.password,
+    user_metadata: { name: data.name },
+    email_confirm: true,
   });
+  if (authError || !authData?.user) {
+    return fail(authError?.message || 'Failed to create auth user', 400);
+  }
 
-  await logActivity({ userId: user.id, action: 'create', module: 'users', targetId: created.id });
-  return ok({ user: created }, 201);
+  try {
+    const created = await prisma.user.create({
+      data: {
+        id: authData.user.id,
+        name: data.name,
+        email,
+        role: 'STAFF',
+      },
+      select: { id: true, name: true, email: true, role: true, active: true, createdAt: true },
+    });
+
+    await logActivity({ userId: user.id, action: 'create', module: 'users', targetId: created.id });
+    return ok({ user: created }, 201);
+  } catch (err) {
+    // Roll back the auth user if the Prisma insert fails.
+    await supabaseAdmin.auth.admin.deleteUser(authData.user.id);
+    throw err;
+  }
 });

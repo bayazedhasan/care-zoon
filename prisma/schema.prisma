@@ -84,11 +84,12 @@ enum NotificationType {
   ORDER_STATUS
 }
 
+// One row per Supabase auth.users entry. The id is the Supabase auth user
+// UUID (never generated locally) — pass it explicitly when creating rows.
 model User {
-  id          String      @id @default(cuid())
+  id          String      @id
   name        String
   email       String      @unique
-  password    String
   role        Role        @default(STAFF)
   active      Boolean     @default(true)
   lastLoginAt DateTime?

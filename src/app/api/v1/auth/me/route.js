@@ -1,23 +1,55 @@
-import { hashPassword } from '@/lib/auth';
-import { fail, ok, requireUser, withError } from '@/lib/api';
+import { ok, requireUser, withError } from '@/lib/api';
 import { prisma } from '@/lib/prisma';
+import { supabaseAdmin } from '@/lib/supabaseAdmin';
+import { extractToken, verifySupabaseToken } from '@/lib/supabase-auth';
+
+async function syncUser(token) {
+  const payload = await verifySupabaseToken(token);
+  if (!payload?.sub) return null;
+
+  const { data } = await supabaseAdmin.auth.admin.getUserById(payload.sub);
+  if (!data?.user) return null;
+
+  const name = data.user.user_metadata?.name || data.user.email?.split('@')[0] || 'User';
+
+  const user = await prisma.user.upsert({
+    where: { id: payload.sub },
+    update: {},
+    create: {
+      id: payload.sub,
+      email: payload.email,
+      name,
+    },
+    select: { id: true, name: true, email: true, role: true },
+  });
+
+  return user;
+}
 
 export const GET = withError(async (request) => {
-  const user = await requireUser(request);
-  return ok({ user });
+  try {
+    const user = await requireUser(request);
+    return ok({ user });
+  } catch {
+    const token = extractToken(request);
+    if (!token) throw { __unauthorized: true };
+    const payload = await verifySupabaseToken(token);
+    if (!payload?.sub) throw { __unauthorized: true };
+    const synced = await syncUser(token);
+    if (!synced) throw new Error('Failed to sync user');
+    return ok({ user: synced });
+  }
 });
 
 export const PATCH = withError(async (request) => {
   const user = await requireUser(request);
   const body = await request.json().catch(() => ({}));
 
-  const data = {};
-  if (body.name) data.name = body.name;
-  if (body.password) data.password = await hashPassword(body.password);
+  if (!body.name) return ok({ user });
 
   const updated = await prisma.user.update({
     where: { id: user.id },
-    data,
+    data: { name: body.name },
     select: { id: true, name: true, email: true, role: true },
   });
 

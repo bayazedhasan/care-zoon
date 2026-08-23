@@ -1,6 +1,6 @@
 import { PrismaClient } from '../src/generated/prisma/client.ts';
 import { PrismaPg } from '@prisma/adapter-pg';
-import bcrypt from 'bcryptjs';
+import { createClient } from '@supabase/supabase-js';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -23,13 +23,30 @@ async function main() {
   const adminEmail = process.env.SEED_ADMIN_EMAIL || 'admin@carezoon.com';
   const adminPassword = process.env.SEED_ADMIN_PASSWORD || 'admin123';
 
+  // Credentials live in Supabase Auth; Prisma only stores the profile.
+  const supabaseAdmin = createClient(
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_SECRET_KEY,
+    { auth: { persistSession: false, autoRefreshToken: false } }
+  );
+
   const existingAdmin = await prisma.user.findUnique({ where: { email: adminEmail } });
   if (!existingAdmin) {
+    const { data, error } = await supabaseAdmin.auth.admin.createUser({
+      email: adminEmail,
+      password: adminPassword,
+      user_metadata: { name: 'Store Administrator' },
+      email_confirm: true,
+    });
+    if (error || !data?.user) {
+      throw new Error(`Failed to create Supabase auth user: ${error?.message}`);
+    }
+
     await prisma.user.create({
       data: {
+        id: data.user.id,
         name: 'Store Administrator',
         email: adminEmail,
-        password: await bcrypt.hash(adminPassword, 12),
         role: 'ADMIN',
       },
     });

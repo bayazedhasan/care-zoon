@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { ZodError } from 'zod';
-import { verifyToken } from './auth';
+import { extractToken, verifySupabaseToken } from './supabase-auth';
 import { hasPermission } from './permissions';
 import { prisma } from './prisma';
 
@@ -52,14 +52,11 @@ export async function parseBody(request, schema) {
 }
 
 export async function getCurrentUser(request) {
-  let token = request.headers.get('authorization')?.replace(/^Bearer\s+/i, '');
-  if (!token) {
-    const cookies = request.cookies;
-    token = cookies.get('carezoon_access')?.value;
-  }
+  const token = extractToken(request);
   if (!token) return null;
-  const payload = await verifyToken(token);
-  if (!payload || payload.type !== 'access') return null;
+  const payload = await verifySupabaseToken(token);
+  // payload.sub is the Supabase auth.users UUID, which is our User.id
+  if (!payload?.sub) return null;
   const user = await prisma.user.findUnique({
     where: { id: payload.sub },
     select: { id: true, name: true, email: true, role: true, active: true },

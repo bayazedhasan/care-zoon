@@ -38,20 +38,9 @@ export default function AdminShell({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  // FIX: /admin/login must never go through the authenticated shell —
-  // it's the page you use to *become* authenticated. Wrapping it in the
-  // same auth-check created a loop: check auth -> fail -> "not logged in"
-  // -> render a second "Loading…" screen forever, instead of the form.
-  const isLoginPage = pathname.startsWith('/admin/login');
+  let timeoutId = null;
 
   useEffect(() => {
-    if (isLoginPage) {
-      // Nothing to check on the login page itself — stop "loading" immediately.
-      setLoading(false);
-      return;
-    }
-
     let active = true;
 
     const init = async () => {
@@ -59,24 +48,38 @@ export default function AdminShell({ children }) {
         const data = await apiFetch('/auth/me');
         if (active) setUser(data.user);
       } catch {
-        if (active) router.replace('/admin/login');
+        if (active && !pathname.startsWith('/admin/login')) {
+          router.replace('/admin/login');
+        }
       } finally {
-        if (active) setLoading(false);
+        if (active) {
+          setLoading(false);
+        }
       }
     };
 
     init();
 
+    timeoutId = setTimeout(() => {
+      if (active && !user && !pathname.startsWith('/admin/login')) {
+        router.replace('/admin/login');
+      }
+    }, 10000);
+
     return () => {
       active = false;
+      if (timeoutId) clearTimeout(timeoutId);
     };
-  }, [pathname, router, isLoginPage]);
+  }, [pathname, router]);
 
-  // FIX: on the login page, skip the shell (sidebar/topbar/auth-guard)
-  // entirely and just render the login form.
-  if (isLoginPage) {
-    return children;
-  }
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } catch {
+      // ignore
+    }
+    router.replace('/admin/login');
+  };
 
   if (loading) {
     return (
@@ -90,19 +93,15 @@ export default function AdminShell({ children }) {
   }
 
   if (!user) {
-    // FIX: we already triggered a redirect to /admin/login above.
-    // Render nothing instead of a second infinite "Loading…" screen.
-    return null;
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950">
+        <div className="flex items-center gap-3 text-slate-400">
+          <div className="h-5 w-5 animate-spin rounded-full border-2 border-slate-300 border-t-sky-500" />
+          <span className="text-sm">Loading…</span>
+        </div>
+      </div>
+    );
   }
-
-  const handleLogout = async () => {
-    try {
-      await logout();
-    } catch {
-      // ignore
-    }
-    router.replace('/admin/login');
-  };
 
   return (
     <div className="min-h-screen bg-slate-100 dark:bg-slate-950">
@@ -181,28 +180,28 @@ export default function AdminShell({ children }) {
               <LogOut size={17} />
             </button>
           </div>
+        </aside>
+
+        {/* Main column */}
+        <div className="lg:pl-64">
+          {/* Topbar */}
+          <header className="sticky top-0 z-20 flex h-16 items-center gap-4 border-b border-slate-200 bg-white/80 px-4 backdrop-blur-sm sm:px-6 dark:border-slate-800 dark:bg-slate-900/80">
+            <button
+              className="text-slate-500 lg:hidden"
+              onClick={() => setSidebarOpen(true)}
+              aria-label="Open sidebar"
+            >
+              <Menu size={22} />
+            </button>
+            <div>
+              <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                {NAV_ITEMS.find((n) => n.exact ? pathname === n.href : pathname.startsWith(n.href))?.label || 'Admin'}
+              </p>
+            </div>
+          </header>
+
+          <main className="p-4 sm:p-6 lg:p-8">{children}</main>
         </div>
-      </aside>
-
-      {/* Main column */}
-      <div className="lg:pl-64">
-        {/* Topbar */}
-        <header className="sticky top-0 z-20 flex h-16 items-center gap-4 border-b border-slate-200 bg-white/80 px-4 backdrop-blur-sm sm:px-6 dark:border-slate-800 dark:bg-slate-900/80">
-          <button
-            className="text-slate-500 lg:hidden"
-            onClick={() => setSidebarOpen(true)}
-            aria-label="Open sidebar"
-          >
-            <Menu size={22} />
-          </button>
-          <div>
-            <p className="text-sm font-semibold text-slate-900 dark:text-white">
-              {NAV_ITEMS.find((n) => n.exact ? pathname === n.href : pathname.startsWith(n.href))?.label || 'Admin'}
-            </p>
-          </div>
-        </header>
-
-        <main className="p-4 sm:p-6 lg:p-8">{children}</main>
       </div>
     </div>
   );

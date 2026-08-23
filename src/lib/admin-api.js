@@ -1,3 +1,5 @@
+import { supabase } from './supabaseClient';
+
 export class ApiError extends Error {
   constructor(message, status, details) {
     super(message);
@@ -8,9 +10,16 @@ export class ApiError extends Error {
 
 export async function apiFetch(path, options = {}) {
   const { headers, ...rest } = options;
+
+  // Attach the Supabase session's access token as a Bearer token.
+  const { data: { session } } = await supabase.auth.getSession();
+  const authHeaders = session?.access_token
+    ? { Authorization: `Bearer ${session.access_token}` }
+    : {};
+
   const res = await fetch(`/api/v1${path}`, {
     ...rest,
-    headers: { 'Content-Type': 'application/json', ...(headers || {}) },
+    headers: { 'Content-Type': 'application/json', ...authHeaders, ...(headers || {}) },
   });
 
   let body = null;
@@ -23,6 +32,7 @@ export async function apiFetch(path, options = {}) {
   if (!res.ok) {
     if (res.status === 401) {
       if (typeof window !== 'undefined' && !window.location.pathname.startsWith('/admin/login')) {
+        await supabase.auth.signOut();
         window.location.href = '/admin/login';
       }
     }

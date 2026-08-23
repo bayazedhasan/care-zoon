@@ -1,5 +1,5 @@
 import { getStripe } from '@/lib/stripe';
-import { fail, ok } from '@/lib/api';
+import { fail, ok, withError } from '@/lib/api';
 import { prisma } from '@/lib/prisma';
 
 export const POST = withError(async (request) => {

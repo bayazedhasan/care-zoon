@@ -1,24 +1,9 @@
 import { NextResponse } from 'next/server';
 
+// Auth is handled by Supabase (client-side session) + the AdminShell client
+// guard, so there is nothing to check at the edge anymore. Kept as a
+// pass-through matcher placeholder.
 export function proxy(request) {
-  const { pathname } = request.nextUrl;
-
-  if (pathname.startsWith('/admin') && pathname !== '/admin/login') {
-    const accessToken = request.cookies.get('carezoon_access')?.value;
-    if (!accessToken) {
-      const url = new URL('/admin/login', request.url);
-      url.searchParams.set('next', pathname);
-      return NextResponse.redirect(url);
-    }
-  }
-
-  if (pathname.startsWith('/admin/login')) {
-    const accessToken = request.cookies.get('carezoon_access')?.value;
-    if (accessToken) {
-      return NextResponse.redirect(new URL('/admin', request.url));
-    }
-  }
-
   return NextResponse.next();
 }
 

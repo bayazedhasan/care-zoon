@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Store, Lock, Mail, Eye, EyeOff, ArrowRight } from 'lucide-react';
-import { apiFetch } from '@/lib/admin-api';
+import { login } from '@/lib/auth-client';
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -22,10 +22,7 @@ export default function AdminLoginPage() {
     setError(null);
     setLoading(true);
     try {
-      await apiFetch('/auth/login', {
-        method: 'POST',
-        body: JSON.stringify({ email, password }),
-      });
+      await login({ email, password });
       router.replace(next);
       router.refresh();
     } catch (err) {

@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import { hashPassword } from '@/lib/auth';
 import { fail, logActivity, notFound, ok, requireRole, withError } from '@/lib/api';
 import { prisma } from '@/lib/prisma';
+import { supabaseAdmin } from '@/lib/supabaseAdmin';
 
 const updateSchema = z.object({
   name: z.string().min(2).max(100).optional(),
@@ -29,12 +29,15 @@ export const PATCH = withError(async (request, { params }) => {
     return fail('You cannot demote your own account', 400);
   }
 
+  // Password resets are handled by Supabase Auth, not Prisma.
+  if (password) {
+    const { error } = await supabaseAdmin.auth.admin.updateUserById(id, { password });
+    if (error) return fail(error.message, 400);
+  }
+
   const updated = await prisma.user.update({
     where: { id },
-    data: {
-      ...rest,
-      password: password ? await hashPassword(password) : undefined,
-    },
+    data: rest,
     select: { id: true, name: true, email: true, role: true, active: true },
   });
 
@@ -50,6 +53,7 @@ export const DELETE = withError(async (request, { params }) => {
   if (!target) return notFound('User not found');
   if (target.id === admin.id) return fail('Cannot delete your own account', 400);
 
+  await supabaseAdmin.auth.admin.deleteUser(id);
   await prisma.user.delete({ where: { id } });
   await logActivity({ userId: admin.id, action: 'delete', module: 'users', targetId: id });
   return ok({ message: 'User deleted' });
