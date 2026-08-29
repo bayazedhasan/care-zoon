@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Store, Lock, Mail, Eye, EyeOff, ArrowRight } from 'lucide-react';
 import { login } from '@/lib/auth-client';
 
-export default function AdminLoginPage() {
+function AdminLoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const next = searchParams.get('next') || '/admin';
@@ -21,6 +21,7 @@ export default function AdminLoginPage() {
     e.preventDefault();
     setError(null);
     setLoading(true);
+
     try {
       await login({ email, password });
       router.replace(next);
@@ -43,8 +44,14 @@ export default function AdminLoginPage() {
             <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500 text-white">
               <Store size={24} />
             </div>
-            <h1 className="font-heading text-2xl font-bold text-slate-900 dark:text-white">Admin Console</h1>
-            <p className="text-sm text-slate-500">Sign in to manage your store</p>
+
+            <h1 className="font-heading text-2xl font-bold text-slate-900 dark:text-white">
+              Admin Console
+            </h1>
+
+            <p className="text-sm text-slate-500">
+              Sign in to manage your store
+            </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4 p-8 pt-6">
@@ -55,7 +62,11 @@ export default function AdminLoginPage() {
             )}
 
             <div className="relative">
-              <Mail size={17} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+              <Mail
+                size={17}
+                className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+              />
+
               <input
                 type="email"
                 value={email}
@@ -68,7 +79,11 @@ export default function AdminLoginPage() {
             </div>
 
             <div className="relative">
-              <Lock size={17} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+              <Lock
+                size={17}
+                className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+              />
+
               <input
                 type={showPassword ? 'text' : 'password'}
                 value={password}
@@ -78,13 +93,18 @@ export default function AdminLoginPage() {
                 required
                 className={inputClasses}
               />
+
               <button
                 type="button"
                 onClick={() => setShowPassword((v) => !v)}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300"
                 aria-label={showPassword ? 'Hide password' : 'Show password'}
               >
-                {showPassword ? <EyeOff size={17} /> : <Eye size={17} />}
+                {showPassword ? (
+                  <EyeOff size={17} />
+                ) : (
+                  <Eye size={17} />
+                )}
               </button>
             </div>
 
@@ -97,7 +117,8 @@ export default function AdminLoginPage() {
                 <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" />
               ) : (
                 <>
-                  Sign in <ArrowRight size={16} />
+                  Sign in
+                  <ArrowRight size={16} />
                 </>
               )}
             </button>
@@ -105,18 +126,41 @@ export default function AdminLoginPage() {
 
           <div className="border-t border-slate-100 px-8 py-4 text-center dark:border-slate-800">
             <p className="text-xs text-slate-400">
-              Default seed login: <code className="rounded bg-slate-100 px-1.5 py-0.5 dark:bg-slate-800">admin@carezoon.com</code> /{' '}
-              <code className="rounded bg-slate-100 px-1.5 py-0.5 dark:bg-slate-800">admin123</code>
+              Default seed login:{' '}
+              <code className="rounded bg-slate-100 px-1.5 py-0.5 dark:bg-slate-800">
+                admin@carezoon.com
+              </code>{' '}
+              /{' '}
+              <code className="rounded bg-slate-100 px-1.5 py-0.5 dark:bg-slate-800">
+                admin123
+              </code>
             </p>
           </div>
         </div>
 
         <p className="mt-6 text-center text-sm text-slate-500">
-          <Link href="/" className="text-sky-600 hover:underline dark:text-sky-400">
+          <Link
+            href="/"
+            className="text-sky-600 hover:underline dark:text-sky-400"
+          >
             ← Back to storefront
           </Link>
         </p>
       </div>
     </div>
+  );
+}
+
+export default function AdminLoginPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex min-h-screen items-center justify-center bg-slate-100 dark:bg-slate-950">
+          <div className="text-sm text-slate-400">Loading...</div>
+        </div>
+      }
+    >
+      <AdminLoginForm />
+    </Suspense>
   );
 }
